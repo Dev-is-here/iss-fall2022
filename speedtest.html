@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="cryptography.css">
+</head>
+
+<body>
+
+    <div id="mainwindow" class="mainwindow">
+
+        <h2>3 D Cryptography</h2>
+        <div>
+            <p> <strong> Secret message:</strong></p>
+            <textarea id="message" name="message" placeholder="Type in the message you want to encrypt..."></textarea>
+            <p> <strong> Password:</strong></p>
+            <input  id="password" name="password" placeholder="Longer the password the better..."><br>
+            <p> Encryption cube size:</strong></p>
+            
+            
+            <input type="number" id="cubesize" name="cubesize" class="box" placeholder="Get recommended cube size from below..."
+                min="1" max="150 "><br><br>
+            
+                <button id="recommend" class="box" onclick="recommendCubesize()">Recommend cube size</button>
+                
+        </div>
+
+        <div id="buttons" class="buttons">
+            <button id="encryption" class="encryption" onclick="speedtest()"> ENCRYPT </button>
+        </div>
+        
+        <div>
+            <p id="output" class="output"></p>
+        </div>
+        <div>
+        <button id="plotgraph" style="display:none;">Plot Graph</button>
+        <div id="keyid" style="display:none;"><a id="key"><button>Download key</button></a></div>
+        </div>
+        <br>
+        <div id='myDiv' style="display:none;"></div>
+        <div ><p>Perforance Test Mode is ON.</p> <br> <p>Right Click>Inspect element to see the output for time taken</p></div>
+
+        <a href="index.html"><button>Turn it <span style="color:red;"> OFF</span></button></a>
+
+
+                     <!-- encryption-->
+                     <a href="index.html"><button>Home</button></a>
+
+    </div>
+
+    <!--
+       Secret message: <input type="text" id="message" name="message"><br><br>
+        Password: <input type="text" id="password" name="password"><br><br>
+        <button onclick="submitform()">Encrypt</button>
+        <button id="key"></button>
+        <button id="plotgraph" style="display:none;">Plot Graph</button>
+        
+
+      <div>AES encryption</div>
+     
+      <div id="encryptedmessage"></div>
+      <div id='myDiv' width="100%" height="100%"></div>
+      <canvas id="canvas" width=120 height=120></canvas>>-->
+    <script type="text/javascript" src="crypto-js.js"></script>
+    <script type="text/javascript" src="app2.js"></script>
+    <script type="text/javascript" src="speedtest.js"></script>
+</body>
+
+</html>

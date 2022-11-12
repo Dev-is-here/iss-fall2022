@@ -1,0 +1,89 @@
+.mainwindow {
+    background-color: rgba(0, 0, 0, 0.473);
+    width: 50%;
+    border: 3px solid #64ddfd;
+
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: aliceblue;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+body {
+    animation: AnimationName 8s ease infinite;
+    background: linear-gradient(289deg, #030029, #004b53);
+    animation: AnimationName 7s ease infinite;
+    background-size: 400% 400%;
+    color: #64ddfd;
+    font-family: courier;
+    text-align: center;
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+input,
+textarea {
+    border: 2px solid #81f8d0;
+    width: 80%;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 14px 20px;
+    resize: vertical;
+}
+
+button {
+    width: 80%;
+    background-color: #0202027a;
+
+    color: #64ddfd;
+    font-family: courier;
+    text-align: center;
+    border-radius: 15px;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #81f8d0;
+    border: 2px solid #00ff7300;
+    color: black;
+}
+
+button:active {
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.774);
+}
+
+#myDiv {
+    border: 2px solid #64ddfd;
+    background: white;
+    border-radius: 8px;
+}
+
+#fixedbutton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
