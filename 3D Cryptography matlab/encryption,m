@@ -2,9 +2,9 @@ clc;
 clear all;
 close all;
 
-batman = imread('C:\Users\karan\Desktop\batman.png');
+batman = imread('C:\Users\kunal\Desktop\batman.png');
 batman = im2bw(batman, 0.5);
-punisher = imread('C:\Users\karan\Desktop\punisher.png');
+punisher = imread('C:\Users\kunal\Desktop\punisher.png');
 punisher = im2bw(punisher,0.5);
 z1=batman*10+punisher;
 
@@ -40,7 +40,7 @@ end
 a = randperm(3375,3375);
 
 %export key
-save('C:\Users\karan\Desktop\Image\key.txt','a', '-ascii');
+save('C:\Users\kunal\Desktop\Image\key.txt','a', '-ascii');
 
 %generate address key matrix
 m=1;
@@ -68,18 +68,18 @@ for i=1:15
 end
 
 image1=encmtrx(:,:,1:3);
-imwrite(image1,'C:\Users\karan\Desktop\Image\Image1.png');
+imwrite(image1,'C:\Users\kunal\Desktop\Image\Image1.png');
 
 image1=encmtrx(:,:,4:6);
-imwrite(image1,'C:\Users\karan\Desktop\Image\Image2.png');
+imwrite(image1,'C:\Users\kunal\Desktop\Image\Image2.png');
 
 image1=encmtrx(:,:,7:9);
-imwrite(image1,'C:\Users\karan\Desktop\Image\Image3.png');
+imwrite(image1,'C:\Users\kunal\Desktop\Image\Image3.png');
 
 image1=encmtrx(:,:,10:12);
-imwrite(image1,'C:\Users\karan\Desktop\Image\Image4.png');
+imwrite(image1,'C:\Users\kunal\Desktop\Image\Image4.png');
 
 image1=encmtrx(:,:,13:15);
-imwrite(image1,'C:\Users\karan\Desktop\Image\Image5.png');
+imwrite(image1,'C:\Users\kunal\Desktop\Image\Image5.png');
 
 
