@@ -26,9 +26,7 @@ function speedtest() {
     var key = shuffle(numbers)
 
     var key = key.slice(0, messagelength)
-    //console.log("This is the key " + key)
-    //console.log("This is the key length " + key.length)
-    //output.innerHTML = output.innerHTML + "<br><br>" + "Part 2/2_Randomize array: <span style='color:green;'>Success</span>"
+    
 
     //creating cube
     var cube = new Array();
@@ -68,13 +66,7 @@ function speedtest() {
     console.log("Click counter: " + click2)
     console.log(cube)
 
-    /*decryption code
-    This code will decrypt from the key. 
-    later to be exported to another function
-    
-    */
 
-    //figure out a way to decide size of cube
 
     //make an address mapper
     console.time()

@@ -5,21 +5,7 @@ z1=[ 1,0,1;1,0,1;1,0,1];
 y1=[ 1,0,1;1,0,1;1,0,1];
 z1=z1+y1;
 
-%matrix declaration
-% m=1;
-% for i=1:3
-%     for j=1:3
-%         for k=1:3           
-%           
-%             x1(i,j,k)=0;
-%             encmtrx(i,j,k)=0;
-%             ogmtrx(i,j,k)=0;
-%              b(m)=0;
-%              a(m)=0;
-%         end;
-%       
-%     end;
-% end;
+
 
 %part 1
 k=1;

@@ -25,9 +25,9 @@ function encryption() {
         console.log(side + " " + area + " " + volume)
 
 
-        //AES encryption
+        //DS encryption
         var ciphertext = CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
-        output.innerHTML = output.innerHTML + "<br><br>" + "AES encryption: <span style='color:green;'>Success</span><br><br>AES key:  <span style='color:green;'>OK</span>"
+        output.innerHTML = output.innerHTML + "<br><br>" + "DS encryption: <span style='color:green;'>Success</span><br><br>DS key:  <span style='color:green;'>OK</span>"
 
         //convert to binary
         var binaryciphertext = text2Binary(ciphertext)

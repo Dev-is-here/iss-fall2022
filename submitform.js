@@ -1,15 +1,11 @@
 
 function submitform() {
     console.log("abc")
-    // Encrypt to AES
+    
+
     var ciphertext = CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
 
-    // Decrypt from AES
-    /*
-    var bytes = CryptoJS.AES.decrypt(ciphertext, document.getElementById("password").value);
-    var originalText = bytes.toString(CryptoJS.enc.Utf8);
-    console.log(originalText)
-    */
+    
 
 
     //"encryptedmessage"
@@ -19,19 +15,7 @@ function submitform() {
     console.log(binaryciphertext)
     console.log(binary2Text(binaryciphertext))
     console.log(messagelength)
-    //padding 
-
-    /*
-    while (binaryciphertext.length < 3375) {
-        randomdigit = Math.floor((Math.random() * 2)).toString();
-        binaryciphertext = binaryciphertext.concat(randomdigit) 
-    }
-
-    console.log(binaryciphertext)
-    console.log(binaryciphertext.length)
-
-    */
-
+    
 
 
     //make an array
