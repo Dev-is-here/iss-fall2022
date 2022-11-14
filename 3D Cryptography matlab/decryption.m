@@ -3,17 +3,17 @@ clc;
 clear all;
 close all;
 %import images and key
-image1= imread('C:\Users\karan\Desktop\Image\Image1.png');
+image1= imread('C:\Users\kunal\Desktop\Image\Image1.png');
 encmtrx(:,:,1:3)= image1;
-image1= imread('C:\Users\karan\Desktop\Image\Image2.png');
+image1= imread('C:\Users\kunal\Desktop\Image\Image2.png');
 encmtrx(:,:,4:6)= image1;
-image1= imread('C:\Users\karan\Desktop\Image\Image3.png');
+image1= imread('C:\Users\kunal\Desktop\Image\Image3.png');
 encmtrx(:,:,7:9)= image1;
-image1= imread('C:\Users\karan\Desktop\Image\Image4.png');
+image1= imread('C:\Users\kunal\Desktop\Image\Image4.png');
 encmtrx(:,:,10:12)= image1;
-image1= imread('C:\Users\karan\Desktop\Image\Image5.png');
+image1= imread('C:\Users\kunal\Desktop\Image\Image5.png');
 encmtrx(:,:,13:15)= image1;
-a=load('C:\Users\karan\Desktop\Image\key.txt','a','-ascii');
+a=load('C:\Users\kunal\Desktop\Image\key.txt','a','-ascii');
 
 
 
