@@ -3,7 +3,7 @@ function submitform() {
     console.log("abc")
     
 
-    var ciphertext = CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
+    var ciphertext = CryptoJS.DS.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
 
     
 
@@ -141,9 +141,9 @@ function submitform() {
 
     var decryptedtext = binary2Text(decryptedarray.toString().replace(/,/g, ""))
 
-    //aes decrypt
+    //ds decrypt
 
-    var bytes = CryptoJS.AES.decrypt(decryptedtext, document.getElementById("password").value);
+    var bytes = CryptoJS.DS.decrypt(decryptedtext, document.getElementById("password").value);
     var originalText = bytes.toString(CryptoJS.enc.Utf8);
     console.log("decrypted text: " + originalText)
 

@@ -26,7 +26,7 @@ function encryption() {
 
 
         //DS encryption
-        var ciphertext = CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
+        var ciphertext = CryptoJS.DS.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
         output.innerHTML = output.innerHTML + "<br><br>" + "DS encryption: <span style='color:green;'>Success</span><br><br>DS key:  <span style='color:green;'>OK</span>"
 
         //convert to binary
@@ -363,8 +363,8 @@ function plotGraph(cube, side) {
 //recommend cube size
 
 function recommendCubesize() {
-    //convert to aes and binary in one step calculate its length and all
-    document.getElementById("cubesize").value = Math.ceil(Math.cbrt(text2Binary(CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString()).length)) + 5;
+    //convert to ds and binary in one step calculate its length and all
+    document.getElementById("cubesize").value = Math.ceil(Math.cbrt(text2Binary(CryptoJS.DS.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString()).length)) + 5;
 }
 
 //dec to binary only for numbers till 255

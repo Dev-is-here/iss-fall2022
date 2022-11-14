@@ -89,9 +89,9 @@ document.getElementById("scream").onload = function () {
     console.log(decryptedarray)
     var decryptedtext = binary2Text(decryptedarray.toString().replace(/,/g, ""))
 
-    //aes decrypt
+    //ds decrypt
 
-    var bytes = CryptoJS.AES.decrypt(decryptedtext, json.aeskey);
+    var bytes = CryptoJS.DS.decrypt(decryptedtext, json.aeskey);
     var originalText = bytes.toString(CryptoJS.enc.Utf8);
     console.log("decrypted text: " + originalText)
     
