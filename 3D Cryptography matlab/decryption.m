@@ -2,7 +2,7 @@
 clc;
 clear all;
 close all;
-%import images and key
+%import images and ds
 image1= imread('C:\Users\kunal\Desktop\Image\Image1.png');
 encmtrx(:,:,1:3)= image1;
 image1= imread('C:\Users\kunal\Desktop\Image\Image2.png');
@@ -13,14 +13,14 @@ image1= imread('C:\Users\kunal\Desktop\Image\Image4.png');
 encmtrx(:,:,10:12)= image1;
 image1= imread('C:\Users\kunal\Desktop\Image\Image5.png');
 encmtrx(:,:,13:15)= image1;
-a=load('C:\Users\kunal\Desktop\Image\key.txt','a','-ascii');
+a=load('C:\Users\kunal\Desktop\Image\ds.txt','a','-ascii');
 
 
 
 
 
 
-%generate address key matrix
+%generate address ds matrix
 m=1;
 for i=1:15
     for j=1:15

@@ -3,7 +3,7 @@ function submitform() {
     console.log("abc")
     
 
-    var ciphertext = CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
+    var ciphertext = CryptoJS.DS.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
 
     
 
@@ -26,11 +26,11 @@ function submitform() {
     console.log("This is the numbers array " + numbers)
 
     //randomize the array
-    var key = shuffle(numbers)
+    var ds = shuffle(numbers)
 
-    var key = key.slice(0, messagelength)
-    console.log("This is the key " + key)
-    console.log("This is the key length " + key.length)
+    var ds = ds.slice(0, messagelength)
+    console.log("This is the ds " + ds)
+    console.log("This is the ds length " + ds.length)
 
     //creating cube
     var cube = new Array();
@@ -47,10 +47,10 @@ function submitform() {
     for (let k = 0; k < side; k++) {
         for (let i = 0; i < side; i++) {
             for (let j = 0; j < side; j++) {
-                if (key.includes(addresscounter) == true) {
-                    //console.log(addresscounter+" Index :  "+key.indexOf(addresscounter)+" Actual data : "+binaryciphertext[key.indexOf(addresscounter)])
-                    //input actual data based on the key
-                    cube[i][j][k] = parseInt(binaryciphertext[key.indexOf(addresscounter)])
+                if (ds.includes(addresscounter) == true) {
+                    //console.log(addresscounter+" Index :  "+ds.indexOf(addresscounter)+" Actual data : "+binaryciphertext[ds.indexOf(addresscounter)])
+                    //input actual data based on the ds
+                    cube[i][j][k] = parseInt(binaryciphertext[ds.indexOf(addresscounter)])
                     //this variable is just for testing purposes
                     tempcounter++
                 } else {
@@ -71,21 +71,21 @@ function submitform() {
         plotGraph(cube)
     };
 
-    //generte final key object in javascript
-    var finalkey = {
-        aeskey: document.getElementById("password").value,
-        key: key
+    //generte final ds object in javascript
+    var finalds = {
+        dsds: document.getElementById("password").value,
+        ds: ds
     }
-    var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(finalkey));
+    var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(finalds));
 
 
-    //download key
+    //download ds
     var a = document.createElement('a');
     a.href = 'data:' + data;
-    a.download = 'key.json';
+    a.download = 'ds.json';
     a.innerHTML = 'download JSON plz asap karde bhai';
 
-    var container = document.getElementById('key');
+    var container = document.getElementById('ds');
     container.appendChild(a);
 
 
@@ -111,7 +111,7 @@ function submitform() {
 
 
     /*decryption code
-    This code will decrypt from the key. 
+    This code will decrypt from the ds. 
     later to be exported to another function
     
     */
@@ -134,16 +134,16 @@ function submitform() {
 
     //extract data from cube
     var decryptedarray = new Array();
-    for (let i = 0; i < key.length; i++) {
+    for (let i = 0; i < ds.length; i++) {
         //may be an error here
-        decryptedarray[i] = cube[addressmap[key[i]][0]][addressmap[key[i]][1]][addressmap[key[i]][2]]
+        decryptedarray[i] = cube[addressmap[ds[i]][0]][addressmap[ds[i]][1]][addressmap[ds[i]][2]]
     }
 
     var decryptedtext = binary2Text(decryptedarray.toString().replace(/,/g, ""))
 
-    //aes decrypt
+    //ds decrypt
 
-    var bytes = CryptoJS.AES.decrypt(decryptedtext, document.getElementById("password").value);
+    var bytes = CryptoJS.DS.decrypt(decryptedtext, document.getElementById("password").value);
     var originalText = bytes.toString(CryptoJS.enc.Utf8);
     console.log("decrypted text: " + originalText)
 

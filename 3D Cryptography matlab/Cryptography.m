@@ -28,10 +28,10 @@ for i=1:3
     end;
 end;
 
-%generate key
+%generate ds
 a = randperm(27,27);
 
-%generate address key matrix
+%generate address ds matrix
 m=1;
 for i=1:3
     for j=1:3
@@ -47,7 +47,7 @@ end;
 for i=1:3
     for j=1:3
         for k=1:3
-            %storing address encryption key in m
+            %storing address encryption ds in m
             m=x(i,j,k);
            
             encmtrx(i,j,k)=b(m);

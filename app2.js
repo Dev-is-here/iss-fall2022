@@ -26,8 +26,8 @@ function encryption() {
 
 
         //DS encryption
-        var ciphertext = CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
-        output.innerHTML = output.innerHTML + "<br><br>" + "DS encryption: <span style='color:green;'>Success</span><br><br>DS key:  <span style='color:green;'>OK</span>"
+        var ciphertext = CryptoJS.DS.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString();
+        output.innerHTML = output.innerHTML + "<br><br>" + "DS encryption: <span style='color:green;'>Success</span><br><br>DS ds:  <span style='color:green;'>OK</span>"
 
         //convert to binary
         var binaryciphertext = text2Binary(ciphertext)
@@ -58,11 +58,11 @@ function encryption() {
 
 
         //randomize the array
-        var key = shuffle(numbers)
+        var ds = shuffle(numbers)
 
-        var key = key.slice(0, messagelength)
-        console.log("This is the key " + key)
-        console.log("This is the key length " + key.length)
+        var ds = ds.slice(0, messagelength)
+        console.log("This is the ds " + ds)
+        console.log("This is the ds length " + ds.length)
         output.innerHTML = output.innerHTML + "<br><br>" + "Part 2/2_Randomize array: <span style='color:green;'>Success</span>"
 
         //creating cube
@@ -83,10 +83,10 @@ function encryption() {
         for (let k = 0; k < side; k++) {
             for (let i = 0; i < side; i++) {
                 for (let j = 0; j < side; j++) {
-                    if (key.includes(addresscounter) == true) {
-                        //console.log(addresscounter+" Index :  "+key.indexOf(addresscounter)+" Actual data : "+binaryciphertext[key.indexOf(addresscounter)])
-                        //input actual data based on the key
-                        cube[i][j][k] = parseInt(binaryciphertext[key.indexOf(addresscounter)])
+                    if (ds.includes(addresscounter) == true) {
+                        //console.log(addresscounter+" Index :  "+ds.indexOf(addresscounter)+" Actual data : "+binaryciphertext[ds.indexOf(addresscounter)])
+                        //input actual data based on the ds
+                        cube[i][j][k] = parseInt(binaryciphertext[ds.indexOf(addresscounter)])
                         //this variable is just for testing purposes
                         tempcounter++
                     } else {
@@ -112,19 +112,19 @@ function encryption() {
         };
 
 
-        //generte final key object in javascript
-        var finalkey = {
-            aeskey: document.getElementById("password").value,
-            key: key,
+        //generte final ds object in javascript
+        var finalds = {
+            dsds: document.getElementById("password").value,
+            ds: ds,
             volume:volume
         }
-        var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(finalkey));
-        output.innerHTML = output.innerHTML + "<br><br>" + "Final key bunch: <span style='color:green;'>Ready</span>"
+        var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(finalds));
+        output.innerHTML = output.innerHTML + "<br><br>" + "Final ds bunch: <span style='color:green;'>Ready</span>"
 
 
-        //download key
-        document.getElementById("keyid").style.display = "block"
-        var a = document.getElementById('key');
+        //download ds
+        document.getElementById("dsid").style.display = "block"
+        var a = document.getElementById('ds');
         a.href = 'data:' + data;
         a.download = 'map.json';
 
@@ -363,8 +363,8 @@ function plotGraph(cube, side) {
 //recommend cube size
 
 function recommendCubesize() {
-    //convert to aes and binary in one step calculate its length and all
-    document.getElementById("cubesize").value = Math.ceil(Math.cbrt(text2Binary(CryptoJS.AES.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString()).length)) + 5;
+    //convert to ds and binary in one step calculate its length and all
+    document.getElementById("cubesize").value = Math.ceil(Math.cbrt(text2Binary(CryptoJS.DS.encrypt(document.getElementById("message").value, document.getElementById("password").value).toString()).length)) + 5;
 }
 
 //dec to binary only for numbers till 255

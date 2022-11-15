@@ -23,9 +23,9 @@ function speedtest() {
 
 
     //randomize the array
-    var key = shuffle(numbers)
+    var ds = shuffle(numbers)
 
-    var key = key.slice(0, messagelength)
+    var ds = ds.slice(0, messagelength)
     
 
     //creating cube
@@ -46,10 +46,10 @@ function speedtest() {
     for (let k = 0; k < side; k++) {
         for (let i = 0; i < side; i++) {
             for (let j = 0; j < side; j++) {
-                if (key.includes(addresscounter) == true) {
-                    //console.log(addresscounter+" Index :  "+key.indexOf(addresscounter)+" Actual data : "+binaryciphertext[key.indexOf(addresscounter)])
-                    //input actual data based on the key
-                    cube[i][j][k] = parseInt(binaryciphertext[key.indexOf(addresscounter)])
+                if (ds.includes(addresscounter) == true) {
+                    //console.log(addresscounter+" Index :  "+ds.indexOf(addresscounter)+" Actual data : "+binaryciphertext[ds.indexOf(addresscounter)])
+                    //input actual data based on the ds
+                    cube[i][j][k] = parseInt(binaryciphertext[ds.indexOf(addresscounter)])
                     //this variable is just for testing purposes
                     //tempcounter++
                 } else {
@@ -85,9 +85,9 @@ function speedtest() {
 
     //extract data from cube
     var decryptedarray = new Array();
-    for (let i = 0; i < key.length; i++) {
+    for (let i = 0; i < ds.length; i++) {
         //may be an error here
-        decryptedarray[i] = cube[addressmap[key[i]][0]][addressmap[key[i]][1]][addressmap[key[i]][2]]
+        decryptedarray[i] = cube[addressmap[ds[i]][0]][addressmap[ds[i]][1]][addressmap[ds[i]][2]]
     }
 
     var decryptedtext = binary2Text(decryptedarray.toString().replace(/,/g, ""))

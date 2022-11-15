@@ -21,11 +21,11 @@
 
                  try {
                      json = JSON.parse(e.target.result);
-                     if (json.key != undefined & json.aeskey != undefined) {
+                     if (json.ds != undefined & json.dsds != undefined) {
                          document.getElementById("accepted").innerHTML = "<p><scan style='color:green;'>Key accepted!</span></p>";
                      }
                      else {
-                        document.getElementById("accepted").innerHTML = "<p><scan style='color:red;'>Error! No key detected.</span></p>";
+                        document.getElementById("accepted").innerHTML = "<p><scan style='color:red;'>Error! No ds detected.</span></p>";
                      }
                  } catch (ex) {
                      alert('error');
@@ -82,16 +82,16 @@ document.getElementById("scream").onload = function () {
     console.log(cube)
     //decryption
     var decryptedarray = new Array();
-    for (let m = 0; m < json.key.length; m++) {
+    for (let m = 0; m < json.ds.length; m++) {
         //may be an error here
-        decryptedarray[m] = cube[json.key[m]]
+        decryptedarray[m] = cube[json.ds[m]]
     }
     console.log(decryptedarray)
     var decryptedtext = binary2Text(decryptedarray.toString().replace(/,/g, ""))
 
-    //aes decrypt
+    //ds decrypt
 
-    var bytes = CryptoJS.AES.decrypt(decryptedtext, json.aeskey);
+    var bytes = CryptoJS.DS.decrypt(decryptedtext, json.dsds);
     var originalText = bytes.toString(CryptoJS.enc.Utf8);
     console.log("decrypted text: " + originalText)
     
