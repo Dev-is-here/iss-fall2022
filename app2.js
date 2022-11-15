@@ -126,7 +126,7 @@ function encryption() {
         document.getElementById("keyid").style.display = "block"
         var a = document.getElementById('key');
         a.href = 'data:' + data;
-        a.download = 'key.json';
+        a.download = 'map.json';
 
 
 
